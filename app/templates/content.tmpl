@@ -1,0 +1,20 @@
+<div class="row">
+{{for data}}
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <img src="{{:images.standard_resolution.url}}">
+        <span class="card-title">{{:location.name}}</span>
+      </div>
+      <div class="card-content">
+      {{for comments.data}}
+        <p>{{:text}}</p>
+      {{/for}}
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+{{/for}}
+</div>

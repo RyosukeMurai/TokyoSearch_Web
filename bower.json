@@ -1,0 +1,9 @@
+{
+  "name": "what-is-there",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.8.2",
+    "materialize": "~0.97.0",
+    "jsrender": "~1.0.0-beta"
+  }
+}
