@@ -1,11 +1,16 @@
 <!doctype html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>What Did?</title>
-    <meta name="description" content="">
+    <title>TokyoSearch：東京にまつわる口コミや、旅の思い出が集めるサービス</title>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="cache-control" content="no-cache,must-revalidate"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta name="keywords" content="東京, 旅行, 休暇, 口コミ, 人気, 投稿, 観光名所, アドバイス, レストラン"/>
+    <meta name="description" content="東京にまつわる情報をWEBから収集、閲覧できるサービスです。ここでどんなことがあったのか、調べてみよう！"/>
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -19,38 +24,119 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
-  </head>
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-	<div class="header"></div>
-	<div class="banner"></div>
-	<div class="content container"></div>
-    <div class="contact"></div>
-	<div class="footer"></div>
-    <div class="modal_wrap"></div>
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/materialize/bin/materialize.js"></script>
-    <script src="bower_components/jsrender/jsrender.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+<header>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">TokyoSearch</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#about">About TokyoSearch</a></li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="#about">About TokyoSearch</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+</header>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-66359697-1');ga('require', 'linkid', 'linkid.js');ga('send','pageview');
-    </script>
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+<section class="parallax-container">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 center">
+                <h1 class="header center">もっと、本物の東京を。</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">TokyoSearchを使って、知らない東京を探しにいこう！</h5>
+                    <p>TokyoSearchは、あなたの位置情報や登録したタグから、関連する情報をWEBからサーチして一覧にするサービスです。</p>
+                    <p>下のボタンをクリックすると、検索が始まります。さっそくクリックして試してみましょう！</p>
+                    <sub>※東京内で利用されることを想定しております。</sub>
+                </div>
+                <div class="row center">
+                    <a href="#" id="start" class="btn-large waves-effect waves-light teal lighten-1">CLICK ME</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="images/background5.jpg" alt="Tokyo Search"></div>
+</section>
+
+<section id="about" class="white container">
+    <div class="row">
+        <div class="col s12 center">
+            <h3><i class="mdi-content-send brown-text"></i></h3>
+            <h4>About Tokyo Search</h4>
+            <p>TokyoSearchは、我々が「もっと東京の事を知りたい！」という思いから始まったサービスです。<br>
+                Webから東京にまつわる情報を集め、現在いる場所やキーワードを元に、独自のキュレーションエンジンがあなたに最適な情報を提供します。<br>
+                慌しい日常の中で、見落としていた街並み。旅行ガイドには乗っていない、隠れた名店。<br>
+                そして何より、今あなたが立っているその場所を、見知らぬ誰かはきっとあなたよりも知っています。<br>
+                一つ一つは些細な情報でも、時間と場所、背景が変われば、それはきっと何者にも変えがたい、貴重な情報になる。<br>
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Amazon affiliate -->
+<section class="affiliate"></section>
+
+<footer class="page-footer teal">
+    <div class="container">
+        <div class="row">
+            <div class="col l9 s12">
+                <h5 class="white-text">利用規約</h5>
+                <p class="grey-text text-lighten-4">本サービスは個人運営のフリーサービスであり、検索結果など、サイトで利用されるあらゆるデータについて、一切の責任を持ちません。<br>
+                    ご利用頂く場合、自己責任でお願い致します。<br>誹謗中傷や犯罪行為に使用する事は禁止いたします。
+                </p>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Owner</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">名前：村井 亮介</a></li>
+                    <li><a class="white-text" href="#!">職業：エンジニア</a></li>
+                    <li><a class="white-text" href="#!">Twitter：＠RyosukeIketeru</a></li>
+                    <li><a class="white-text" href="#!">Facebook：村井亮介</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            Made by RyosukeMurai(use Materialize)
+        </div>
+    </div>
+</footer>
+
+<section class="content container"></section>
+
+
+</div>
+
+<div class="modal_wrap"></div>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/materialize/bin/materialize.js"></script>
+<script src="bower_components/jsrender/jsrender.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-66359697-1');ga('require', 'linkid', 'linkid.js');ga('send','pageview');
+</script>
+
+<!-- build:js({app,.tmp}) scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
 </body>
 </html>

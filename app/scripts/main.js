@@ -1,23 +1,18 @@
 $(function(){
-	// initialize function
-	$.fn.extend( {
-		'render':function(url, data, async){
-			return $.when(
-				$.ajax({
-					type:'get',
-					url:url,
-					async:async || false,
-					success:$.proxy(function(value) {
-						$(this).append($.templates(value).render(data));
-					}, this)
-				})
-			);
-		},
-		'navbar':function(config){
-			$(this).render('./templates/navbar.tmpl').done(function(){
-				$(config.button).sideNav();
-			});
-		},
+    // initialize function
+    $.fn.extend( {
+        'render':function(url, data, async){
+            return $.when(
+                $.ajax({
+                    type:'get',
+                    url:url,
+                    async:async || false,
+                    success:$.proxy(function(value) {
+                        $(this).append($.templates(value).render(data));
+                    }, this)
+                })
+            );
+        },
         'content':function(location_id){
             $.ajax({
                 type:'get',
@@ -69,37 +64,66 @@ $(function(){
                 },this)
             });
         }
-	});
-
-	// load templates
-    $.when(
-		$('.header').navbar({button:'.button-collapse'}),
-		$('.banner').render('./templates/banner.tmpl'),
-		$('.contact').render('./templates/contact.tmpl'),
-		$('.footer').render('./templates/footer.tmpl'),
-        $('.modal_wrap').render('./templates/modal.tmpl')
-	).done(
-		$('.parallax').parallax()
-	);
-
-    $(document).on('click', '.collection-item', function(){
-        $('.content').content($(this).attr('data-id'));
-        $('.modal').closeModal();
     });
 
-    $('#locations').on('click', function(){
-        navigator.geolocation.getCurrentPosition(
-            function(position){
-                $('.modal').locations(position);
-                $('.content').twitter(position);
+    $.extend({
+        'config':{
+            'baseUrl':'https://tokyosearch.herokuapp.com/',
+            'baseUrlOfDev':'http://localhost:8081/',
+            'commands':{
+                'getMixedPosts':'api/posts' //GET POSTS FROM Twitter, Instagram and another
             },
-            function(){
-            },
-            {
-                enableHighAccuracy:true,
-                timeout:6000,
-                maximumAge:600000
+            'affiliate':{
+                'amazonAffiliateFile':'./external/amazon.html'
             }
-        );
+        },
+        'initApps':function(){
+            $('.button-collapse').sideNav();
+            $('.parallax').parallax();
+
+            $(document).on('click', '.collection-item', function(){
+                $('.content').content($(this).attr('data-id'));
+                $('.modal').closeModal();
+            });
+
+            $('#start').on('click', function(){
+                $.getLocation();
+            });
+
+            $.renderAffiliate();
+        },
+        'renderAffiliate':function(){
+            $('.affiliate').render($.config.affiliate.amazonAffiliateFile);
+        },
+        'getLocation' :function(callback){
+            navigator.geolocation.getCurrentPosition(
+                function(result){
+                    callback(result);
+                },
+                function(){
+                },
+                {
+                    enableHighAccuracy:true,
+                    timeout:6000,
+                    maximumAge:600000
+                }
+            );
+        },
+        'accessApi' :function(target, parameter, callback) {
+            $.ajax({
+                type:'get',
+                url:'http://localhost:8081/api/default/twitter',
+                data:{position:position},
+                async:true,
+                dataType:'jsonp',
+                success: $.proxy(function(json){
+                    $(this).render('./templates/twitter.tmpl', json);
+                },this),
+                error: $.proxy(function(result){
+                    console.log(result);
+                },this)
+            });
+        }
     });
-})
+    $.initApps();
+});
