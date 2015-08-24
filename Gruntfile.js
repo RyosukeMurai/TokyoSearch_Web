@@ -19,7 +19,7 @@ module.exports = function (grunt) {
   // Configurable paths
   var config = {
     app: 'app',
-    dist: 'dist'
+    dist: '../tokyosearch/web/dist'
   };
 
   // Define the configuration for all the tasks
@@ -63,7 +63,6 @@ module.exports = function (grunt) {
         files: [
           '<%= config.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
-          '<%= config.app %>/templates/{,*/}*.tmpl',
           '<%= config.app %>/images/{,*/}*'
         ]
       }
@@ -226,7 +225,6 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= config.dist %>'
       },
-      html: '<%= config.app %>/{,*/}*.{html,tmpl}'
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
@@ -238,7 +236,7 @@ module.exports = function (grunt) {
           '<%= config.dist %>/styles'
         ]
       },
-      html: ['<%= config.dist %>/{,*/}*.{html,tmpl}'],
+      html: ['<%= config.dist %>/{,*/}*.{html}'],
       css: ['<%= config.dist %>/styles/{,*/}*.css']
     },
 
@@ -324,7 +322,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
-            '{,*/}*.{html,tmpl}',
+            '{,*/}*.{html}',
             'styles/fonts/{,*/}*.*'
           ]
         }, {

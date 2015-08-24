@@ -2,12 +2,12 @@
 <html class="no-js">
 <head>
     <meta charset="utf-8">
-    <title>TokyoSearch：東京にまつわる口コミや、旅の思い出が集めるサービス</title>
+    <title>TokyoSearch：ドローンにまつわる口コミや、旅の思い出が集まるサービス</title>
     <meta http-equiv="pragma" content="no-cache"/>
     <meta http-equiv="cache-control" content="no-cache,must-revalidate"/>
     <meta http-equiv="expires" content="0"/>
-    <meta name="keywords" content="東京, 旅行, 休暇, 口コミ, 人気, 投稿, 観光名所, アドバイス, レストラン"/>
-    <meta name="description" content="東京にまつわる情報をWEBから収集、閲覧できるサービスです。ここでどんなことがあったのか、調べてみよう！"/>
+    <meta name="keywords" content="ドローン, 旅行, 休暇, 口コミ, 人気, 投稿, 観光名所, アドバイス, レストラン"/>
+    <meta name="description" content="ドローンにまつわる情報をWEBから収集、閲覧できるサービスです。ここでどんなことがあったのか、調べてみよう！"/>
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -50,12 +50,12 @@
     <div class="container">
         <div class="row">
             <div class="col s12 center">
-                <h1 class="header center">もっと、本物の東京を。</h1>
+                <h1 class="header center">もっと、本物のドローンを。</h1>
                 <div class="row center">
-                    <h5 class="header col s12 light">TokyoSearchを使って、知らない東京を探しにいこう！</h5>
-                    <p>TokyoSearchは、あなたの位置情報や登録したタグから、関連する情報をWEBからサーチして一覧にするサービスです。</p>
+                    <h5 class="header col s12 light">TokyoSearchを使って、知らないドローンを探しにいこう！</h5>
+                    <p>TokyoSearchは、あなたの位置情報や登録したタグから、ドローンに関連する情報をWEBからサーチして一覧にするサービスです。</p>
                     <p>下のボタンをクリックすると、検索が始まります。さっそくクリックして試してみましょう！</p>
-                    <sub>※東京内で利用されることを想定しております。</sub>
+                    <sub>※日本で利用されることを想定しております。</sub>
                 </div>
                 <div class="row center">
                     <a href="#" id="start" class="btn-large waves-effect waves-light teal lighten-1">CLICK ME</a>
@@ -66,13 +66,18 @@
     <div class="parallax"><img src="images/background5.jpg" alt="Tokyo Search"></div>
 </section>
 
+<!-- GoogleMap -->
+<section class="googlemap"></section>
+
+<section class="content container"></section>
+
 <section id="about" class="white container">
     <div class="row">
         <div class="col s12 center">
             <h3><i class="mdi-content-send brown-text"></i></h3>
             <h4>About Tokyo Search</h4>
-            <p>TokyoSearchは、我々が「もっと東京の事を知りたい！」という思いから始まったサービスです。<br>
-                Webから東京にまつわる情報を集め、現在いる場所やキーワードを元に、独自のキュレーションエンジンがあなたに最適な情報を提供します。<br>
+            <p>TokyoSearchは、我々が「もっとドローンの事を知りたい！」という思いから始まったサービスです。<br>
+                Webからドローンにまつわる情報を集め、現在いる場所やキーワードを元に、独自のキュレーションエンジンがあなたに最適な情報を提供します。<br>
                 慌しい日常の中で、見落としていた街並み。旅行ガイドには乗っていない、隠れた名店。<br>
                 そして何より、今あなたが立っているその場所を、見知らぬ誰かはきっとあなたよりも知っています。<br>
                 一つ一つは些細な情報でも、時間と場所、背景が変われば、それはきっと何者にも変えがたい、貴重な情報になる。<br>
@@ -80,6 +85,7 @@
         </div>
     </div>
 </section>
+
 <!-- Amazon affiliate -->
 <section class="affiliate"></section>
 
@@ -110,10 +116,6 @@
     </div>
 </footer>
 
-<section class="content container"></section>
-
-
-</div>
 
 <div class="modal_wrap"></div>
 
@@ -124,7 +126,7 @@
 <script src="bower_components/jsrender/jsrender.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
-
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&region=jp" charset="UTF-8"></script>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

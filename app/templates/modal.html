@@ -2,6 +2,9 @@
 <div class="modal modal-fixed-footer">
     <div class="modal-content">
         <div class="collection">
+            {{for data}}
+            <a href="#!" class="collection-item" data-id="{{:id}}">{{:name}}</a>
+            {{/for}}
         </div>
     </div>
     <div class="modal-footer">
