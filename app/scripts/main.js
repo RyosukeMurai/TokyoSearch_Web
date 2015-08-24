@@ -16,7 +16,7 @@ $(function () {
     });
 
     var urlManager = (function (env) {
-        var _domain = document.domain.match(/localhost/i) ? env.domainOfDev : env.domainOfWeb;
+        var _domain = document.domain.match(/localhost|vagrant/i) ? env.domainOfDev : env.domainOfWeb;
         var _urlbuilder = function (command) {
             return env.protocol+'://'+_domain+'/'+command;
         };

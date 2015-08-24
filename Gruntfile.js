@@ -19,7 +19,7 @@ module.exports = function (grunt) {
   // Configurable paths
   var config = {
     app: 'app',
-    dist: '../tokyosearch/web/dist'
+    dist: 'dist'
   };
 
   // Define the configuration for all the tasks
@@ -225,6 +225,7 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= config.dist %>'
       },
+      html: '<%= config.app %>/index.html'
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
@@ -236,7 +237,7 @@ module.exports = function (grunt) {
           '<%= config.dist %>/styles'
         ]
       },
-      html: ['<%= config.dist %>/{,*/}*.{html}'],
+      html: ['<%= config.dist %>/{,*/}*.html'],
       css: ['<%= config.dist %>/styles/{,*/}*.css']
     },
 
@@ -322,8 +323,9 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
-            '{,*/}*.{html}',
-            'styles/fonts/{,*/}*.*'
+            '{,*/}*.html',
+            'styles/fonts/{,*/}*.*',
+            'font/{,*/}*.*'
           ]
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
