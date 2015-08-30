@@ -43,6 +43,9 @@ $(function () {
             },
             'getPlaces': function (parameter, callback) {
                 _post(_urlbuilder('api/place'), parameter, callback);
+            },
+            'getPingIcon':function(parameter, callback){
+                _post(_urlbuilder('api/img/ping'), parameter, callback);
             }
         };
     }({
@@ -70,6 +73,9 @@ $(function () {
                     $('#start').on('click', function () {
                         $.tokyo.popupPlaces();
                     });
+                    $('.signup').on('click', function(){
+                        $.tokyo.popupSignUp();
+                    });
                 }
                 , 'renderAffiliate': function () {
                     $('.affiliate').render($.tokyo.urlManeger.affiliate.amazonAffiliateFile);
@@ -79,7 +85,7 @@ $(function () {
                     $.tokyo.getLocation(function(location) {
                         var map = new google.maps.Map($('.googlemap').get(0), {
                             center:new google.maps.LatLng(location.coords.latitude,location.coords.longitude),
-                            zoom:10,
+                            zoom:3,//10
                             region:'jp'
                         });
 
@@ -108,8 +114,19 @@ $(function () {
                 }
                 , 'renderPosts': function(coords){
                     $.tokyo.urlManeger.getMixedPosts(coords, function(json){
-                        $('.content').children().remove();
-                        $('.content').render('./templates/content.html', json);
+                        //$('.content').children().remove();
+                        //$('.content').render('./templates/content.html', {data:json});
+
+                        $.each(json, function(index, value) {
+                            var marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(value.location.latitude, value.location.longitude),
+                                icon:{
+                                    url:value.pingicon,
+                                    scaledSize : new google.maps.Size(48, 48)
+                                },
+                                map: $.tokyo.map
+                            });
+                        });
                     });
                 }
                 , 'popupPlaces': function (coords) {
@@ -129,6 +146,11 @@ $(function () {
                     $.tokyo.getLocation(function (result) {
                         popup(result.coords);
                     });
+                }
+                , 'popupSignUp' :function(){
+                    $('.modal_wrap').children().remove();
+                    $('.modal_wrap').render('./templates/loginform.html');
+                    $('.modal').openModal();
                 }
             }
         });
